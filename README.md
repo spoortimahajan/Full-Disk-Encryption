@@ -28,12 +28,15 @@ In this project, we simulate FDE using:
 - JavaScript → Handling user interaction & API calls
 
 #  Project Structure
-
-
-
+- static/ --CSS files
+- templates/--HTML files
+- app.py--main python(Flask)file
+- Screenshots/--images
+- README.md--project description
+  
 # Installation and Setup
 - Step 1: Install Python
-  Download and install Python (3.x)
+  Download and install Python 
 - Step 2: Install Flask
   pip install flask
 - Step 3: Project Setup
@@ -48,8 +51,8 @@ In this project, we simulate FDE using:
 - Users enters password in web page
 - Java script sends it to flask backend
 - Flask verifies the password
-- Result is showen on screen
-- If correct--system unclocks
+- Result is shown on screen
+- If correct--system unlocks
 - If wrong--error message shown
   
 # sample log output
