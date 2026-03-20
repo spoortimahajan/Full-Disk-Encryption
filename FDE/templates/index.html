@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BitLocker Drive Encryption</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔐 BitLocker Drive Encryption</h1>
+    <p>Enter the password to unlock this drive</p>
+
+    <input type="password" id="password" placeholder="Password">
+    <br>
+
+    <button onclick="unlockDrive()">Unlock</button>
+
+    <p id="status"></p>
+</div>
+
+<div class="footer">
+    © Microsoft BitLocker Simulation
+</div>
+
+<script>
+function unlockDrive() {
+    let pass = document.getElementById("password").value;
+
+    fetch("/unlock", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ password: pass })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("status").innerText = data.message;
+
+        if(data.status === "success") {
+            setTimeout(() => {
+                document.body.innerHTML = "<h2 style='text-align:center;margin-top:200px;'>Welcome to Windows</h2>";
+            }, 2000);
+        }
+    });
+}
+</script>
+
+</body>
+</html>
