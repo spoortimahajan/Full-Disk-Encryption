@@ -32,6 +32,7 @@ In this project, we simulate FDE using:
 - templates/--HTML files
 - app.py--main python(Flask)file
 - Screenshots/--images
+- Project_Report.md/--full report
 - README.md--project description
   
 # Installation and Setup
